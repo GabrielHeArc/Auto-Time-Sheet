@@ -10,7 +10,7 @@ def get_moment():
         return MomentOfDay.END_MORNING.value
     elif hour > 12 and hour <= 14:
         return MomentOfDay.START_AFTERNOON.value
-    elif hour > 14 and hour <= 18:
+    elif hour > 14:
         return MomentOfDay.END_AFTERNOON.value
     else:
         raise Exception("Invalid hour")
@@ -20,11 +20,10 @@ def get_month():
     return Month(date).name.lower()
 
 def get_day():
-    return datetime.now().day+1
+    return datetime.now().day
 
 def get_time():
     return datetime.now().time()
 
-def write_time():
-    time =  datetime.now().time()
-    print(time)
+def get_year():
+    return datetime.now().year
