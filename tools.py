@@ -4,9 +4,9 @@ from month import Month
 
 def get_moment():
     hour = datetime.now().hour
-    if hour <= 10:
+    if hour <= 9:
         return MomentOfDay.START_MORNING.value
-    elif hour > 10 and hour <= 12:
+    elif hour >= 10 and hour <= 12:
         return MomentOfDay.END_MORNING.value
     elif hour > 12 and hour <= 14:
         return MomentOfDay.START_AFTERNOON.value
