@@ -22,7 +22,7 @@ def main():
         data = get_insert.json()[f"{get_month()}{get_year()}"][get_moment()]
         retry = 0
         success = False
-        while retry < 4 or not success:
+        while retry < 4 and not success:
             if (data == "{:d}:{:02d}".format(get_time().hour, get_time().minute)):
                 send_notification(f"Hour inserted in {get_moment(True)}: " + "{:d}:{:02d}".format(get_time().hour, get_time().minute))
                 print("Success")
